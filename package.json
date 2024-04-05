@@ -1,0 +1,17 @@
+{
+  "name": "2playerwordle",
+  "version": "1.0.0",
+  "description": "Multiplayer Wordle game server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.0.0",
+    "csv-parser": "^3.0.0"
+  },
+  "engines": {
+    "node": "20.x"
+  }
+}
