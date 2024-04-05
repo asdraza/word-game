@@ -1,0 +1,178 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #333;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.screen {
+  width: 100%; /* Ensure full width */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center screen content vertically */
+}
+
+.logo {
+  width: 100%; /* Adjust as needed */
+  max-width: 300px; /* Adjust as needed */
+  margin-bottom: 20px;
+}
+
+.tile {
+  width: 12vw; /* Use viewport width to ensure consistency */
+  height: 12vw; /* Use viewport width to ensure consistency */
+  font-size: 4vw; /* Adjust font size relative to viewport width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #777;
+  max-width: 60px; /* Set a max width to ensure they don't get too big on larger screens */
+  max-height: 60px; /* Set a max height to ensure they don't get too big on larger screens */
+}
+
+.screen.active {
+  display: block;
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-align the game boards within the player */
+  width: 100%; /* Full width to ensure centering */
+}
+
+.game-board {
+  grid-template-columns: repeat(5, 12vw); /* Match tile width using viewport width */
+  gap: 1vw; /* Use viewport width for consistent spacing */
+  justify-content: center;
+  max-width: 300px; /* Ensure the game board doesn't get too wide on larger screens */
+}
+
+.row {
+  display: flex;
+  justify-content: center; /* Center the tiles within the row */
+  margin-bottom: 10px; /* Space between rows */
+}
+
+.guess-input {
+  width: 300px; /* Adjusted width to accommodate the word */
+  padding: 10px;
+  margin: 5px auto; /* Center input horizontally */
+  font-size: 20px;
+  text-align: center;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.keyboard button {
+  padding: 10px;
+  width: 40px;
+  background: #555;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+button {
+  background: #555;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #777;
+}
+
+.hidden {
+  display: none;
+}
+
+.tile.correct-position {
+  background-color: green; /* Correct letter in correct position */
+}
+
+.tile.correct {
+  background-color: orange; /* Correct letter in wrong position */
+}
+
+.key.correct-position {
+  background-color: green;
+}
+
+.key.correct {
+  background-color: orange;
+}
+
+.tile.wrong {
+  background-color: grey; /* Incorrect letter */
+}
+
+
+/* Existing styles above */
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .logo {
+    max-width: 200px; /* Smaller logo on mobile */
+  }
+
+  .game-board {
+    grid-template-columns: repeat(5, 12vw); /* Use viewport width for consistency */
+    gap: 1vw; /* Space between tiles based on viewport width */
+    justify-content: center;
+    max-width: 300px; /* Maximum width of the game board */
+  }
+
+  .tile {
+    width: 12vw; /* Tile width based on viewport width */
+    height: 12vw; /* Tile height based on viewport width */
+    font-size: 3vw; /* Font size based on viewport width */
+    max-width: 60px; /* Maximum tile width */
+    max-height: 60px; /* Maximum tile height */
+  }
+
+  .keyboard button {
+    padding: 5px;
+    width: 8vw; /* Button width based on viewport width */
+    font-size: 2.5vw; /* Button font size based on viewport width */
+    max-width: 40px; /* Maximum button width */
+  }
+
+  .guess-input {
+    width: 80%; /* Responsive width on mobile */
+    font-size: 4vw; /* Font size based on viewport width */
+    padding: 8px; /* Comfortable padding */
+    max-width: 300px; /* Maximum width of the input */
+  }
+
+  .player {
+    margin: 0 5vw; /* Margin based on viewport width */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .guess-input {
+    width: 90%; /* Larger width on very small mobile screens */
+    font-size: 5vw; /* Slightly larger font size for better readability */
+  }
+
+  .player {
+    margin: 0 3vw; /* Smaller margin on very small screens */
+  }
+}
+
+/* Additional styles here if necessary */
+
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiplayer Wordle</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="joinScreen" class="screen">
+  <img src="logo.jpg" alt="2-Player Worddle Logo" class="logo"> <!-- Add this -->
+  <input type="text" id="nameInput" placeholder="Enter your name">
+  <button id="joinGame">Join Game</button>
+</div>
+
+<div id="gameScreen" class="screen hidden">
+  <img src="logo.jpg" alt="2-Player Worddle Logo" class="logo"> <!-- Add this -->
+  <div id="player1" class="player">
+    <h2>Player 1: <span id="player1Name"></span></h2>
+    <div id="player1Board" class="game-board"></div>
+  </div>
+  <div id="player2" class="player">
+    <h2>Player 2: <span id="player2Name"></span></h2>
+    <div id="player2Board" class="game-board"></div>
+  </div>
+  
+  <!-- Guess input section -->
+  <div id="guessInputContainer">
+    <!-- Single input field for guess -->
+    <input type="text" id="guessInput" maxlength="5" class="guess-input" />
+    <button id="submitGuess">Submit Guess</button>
+  </div>
+  
+  
+  <div id="keyboard" class="keyboard"></div>
+</div>
+
+<div id="winnerScreen" class="screen hidden">
+  <h2 id="winnerAnnouncement"></h2>
+  <button id="playAgain">Play Again</button>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
